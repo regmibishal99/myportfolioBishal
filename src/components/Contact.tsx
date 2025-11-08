@@ -71,9 +71,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             <div className="animate-fade-in">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-4">
@@ -128,8 +128,8 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 animate-fade-in card-shadow-lg">
-            <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+          <Card className="p-4 sm:p-6 lg:p-8 animate-fade-in card-shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input
