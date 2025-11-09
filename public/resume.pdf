@@ -1,0 +1,10 @@
+PLACEHOLDER - Replace this file with your actual CV/Resume PDF
+
+Instructions for Admin:
+1. Replace this file (public/resume.pdf) with your actual resume PDF
+2. Keep the filename as "resume.pdf" or update the link in src/components/Hero.tsx
+3. The download button will automatically serve your new CV
+
+To update your profile photo:
+1. Replace src/assets/profile-photo.jpg with your new photo
+2. Keep the filename as "profile-photo.jpg" or update the import in src/components/Hero.tsx

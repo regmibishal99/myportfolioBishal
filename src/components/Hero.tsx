@@ -53,10 +53,13 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
+              asChild
               className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold shadow-lg hover-lift"
             >
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
+              <a href="/resume.pdf" download="Bishal_Regmi_Resume.pdf">
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
+              </a>
             </Button>
           </div>
 
