@@ -17,8 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 30%;
+    --primary: 217 91% 35%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 217 91% 50%;
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
@@ -26,24 +27,30 @@ All colors MUST be HSL.
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 189 94% 43%;
+    --accent: 189 94% 45%;
     --accent-foreground: 0 0% 100%;
+    --accent-glow: 189 94% 60%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 217 91% 30%;
+    --ring: 217 91% 35%;
 
     --radius: 0.75rem;
 
     /* Portfolio-specific colors */
     --hero-gradient-start: 217 91% 30%;
-    --hero-gradient-end: 189 94% 43%;
+    --hero-gradient-mid: 189 94% 43%;
+    --hero-gradient-end: 260 60% 50%;
     --code-bg: 220 13% 18%;
     --code-text: 189 94% 63%;
     --section-bg: 210 20% 98%;
+    
+    /* Glow effects */
+    --glow-primary: 217 91% 35%;
+    --glow-accent: 189 94% 45%;
   }
 
   .dark {
@@ -56,8 +63,9 @@ All colors MUST be HSL.
     --popover: 220 13% 18%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 189 94% 43%;
+    --primary: 189 94% 50%;
     --primary-foreground: 222 47% 11%;
+    --primary-glow: 189 94% 65%;
 
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -65,22 +73,28 @@ All colors MUST be HSL.
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 189 94% 43%;
+    --accent: 189 94% 50%;
     --accent-foreground: 0 0% 100%;
+    --accent-glow: 189 94% 70%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 189 94% 43%;
+    --ring: 189 94% 50%;
     
     /* Portfolio-specific colors */
-    --hero-gradient-start: 217 91% 20%;
-    --hero-gradient-end: 189 94% 33%;
+    --hero-gradient-start: 217 91% 25%;
+    --hero-gradient-mid: 189 94% 40%;
+    --hero-gradient-end: 260 60% 45%;
     --code-bg: 220 13% 12%;
     --code-text: 189 94% 63%;
     --section-bg: 222 47% 11%;
+    
+    /* Glow effects */
+    --glow-primary: 189 94% 50%;
+    --glow-accent: 189 94% 50%;
   }
 }
 
@@ -105,11 +119,25 @@ All colors MUST be HSL.
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent;
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% auto;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-mid)), hsl(var(--hero-gradient-end)));
+    background-size: 200% 200%;
+    animation: gradient-animation 8s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .code-block {
@@ -125,7 +153,7 @@ All colors MUST be HSL.
   }
 
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-2;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-glow;
   }
 
   .card-shadow {
@@ -134,5 +162,25 @@ All colors MUST be HSL.
 
   .card-shadow-lg {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 10px 30px -10px hsl(var(--glow-primary) / 0.4), 
+                0 0 40px -10px hsl(var(--glow-accent) / 0.3);
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

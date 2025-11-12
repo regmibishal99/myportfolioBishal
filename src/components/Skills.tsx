@@ -5,13 +5,18 @@ const Skills = () => {
   const skillCategories = [
     {
       category: "Programming Languages",
-      skills: ["Java", "Python", "JavaScript", "TypeScript", "C++", "SQL"],
+      skills: ["Java", "Python", "JavaScript", "TypeScript", "C++", "SQL", "Dart"],
       color: "primary",
     },
     {
       category: "Frontend Development",
       skills: ["React", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "Redux"],
       color: "accent",
+    },
+    {
+      category: "Mobile Development",
+      skills: ["Flutter", "Dart", "Android", "iOS", "Firebase", "Material Design"],
+      color: "primary",
     },
     {
       category: "Backend Development",

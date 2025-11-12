@@ -5,8 +5,8 @@ const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "Full-Stack Development",
-      description: "Expertise in modern web technologies and frameworks",
+      title: "Full-Stack & Mobile Development",
+      description: "Expertise in web technologies and Flutter mobile apps",
     },
     {
       icon: Rocket,
@@ -41,7 +41,8 @@ const About = () => {
               I'm a passionate Software Engineer with a deep love for crafting
               efficient, scalable solutions to complex problems. Currently
               pursuing my degree in Software Engineering, I combine academic
-              knowledge with hands-on experience in full-stack development.
+              knowledge with hands-on experience in full-stack web development 
+              and mobile app development using Flutter.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
               My journey in software development is driven by curiosity and a
