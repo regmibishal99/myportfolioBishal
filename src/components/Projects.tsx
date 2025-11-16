@@ -44,8 +44,8 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding bg-background">
-      <div className="container-custom">
+    <section id="projects" className="section-padding bg-muted/20 code-rain relative">
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
@@ -60,7 +60,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`p-6 hover-lift card-shadow hover:card-shadow-lg transition-all duration-300 animate-fade-in relative overflow-hidden ${
+              className={`p-6 hover-lift card-shadow hover:shadow-glow transition-all duration-300 animate-fade-in relative overflow-hidden bg-card/90 backdrop-blur-sm border-primary/20 ${
                 project.featured ? "md:col-span-2 lg:col-span-1" : ""
               }`}
               style={{ animationDelay: `${index * 100}ms` }}

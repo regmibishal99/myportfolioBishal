@@ -71,8 +71,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-background">
-      <div className="container-custom">
+    <section id="contact" className="section-padding bg-muted/20 code-rain terminal-pattern relative">
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
@@ -92,7 +92,7 @@ const Contact = () => {
                 {contactInfo.map((info, index) => (
                   <Card
                     key={index}
-                    className="p-4 hover-lift card-shadow hover:card-shadow-lg transition-all duration-300"
+                    className="p-4 hover-lift card-shadow hover:shadow-glow transition-all duration-300 bg-card/80 backdrop-blur-sm border-primary/20"
                   >
                     <a
                       href={info.href}
@@ -115,22 +115,22 @@ const Contact = () => {
 
             <div className="animate-fade-in">
               <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center lg:justify-start">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 bg-card rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift card-shadow"
+                    className="p-4 bg-card/80 backdrop-blur-sm border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-300 hover-lift group shadow-glow"
                   >
-                    <social.icon className="h-6 w-6" />
+                    <social.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
                   </a>
                 ))}
               </div>
             </div>
 
-            <Card className="p-6 bg-accent/10 border-accent/20">
+            <Card className="p-6 bg-accent/10 border-accent/20 backdrop-blur-sm">
               <h4 className="font-bold text-lg mb-2">Response Time</h4>
               <p className="text-sm text-muted-foreground">
                 I typically respond to all inquiries within 24 hours. Looking
@@ -140,7 +140,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-4 sm:p-6 lg:p-8 animate-fade-in card-shadow-lg">
+          <Card className="p-4 sm:p-6 lg:p-8 animate-fade-in card-shadow-lg bg-card/90 backdrop-blur-sm border-primary/20">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>

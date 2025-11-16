@@ -26,8 +26,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-background">
-      <div className="container-custom">
+    <section id="about" className="section-padding bg-background code-rain terminal-pattern relative">
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
@@ -71,10 +71,12 @@ const About = () => {
             {highlights.map((item, index) => (
               <Card
                 key={index}
-                className="p-6 hover-lift card-shadow hover:card-shadow-lg transition-all duration-300 animate-fade-in"
+                className="p-6 hover-lift card-shadow hover:card-shadow-lg transition-all duration-300 animate-fade-in bg-card/80 backdrop-blur-sm border-primary/20"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <item.icon className="h-10 w-10 text-accent mb-4" />
+                <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                  <item.icon className="h-10 w-10 text-accent" />
+                </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">
                   {item.description}
