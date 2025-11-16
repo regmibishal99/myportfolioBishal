@@ -106,6 +106,18 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   html {
@@ -182,5 +194,59 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .code-rain {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-rain::before {
+    content: '01001000 01100101 01101100 01101100 01101111 01010111 01101111 01110010 01101100 01100100 01000011 01101111 01100100 01100101 01010010 01100001 01101001 01101110';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 200%;
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 0.03;
+    animation: codeRain 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .dark .code-rain::before {
+    opacity: 0.05;
+  }
+
+  @keyframes codeRain {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+  }
+
+  .terminal-pattern {
+    position: relative;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 4px
+      );
+  }
+
+  .dark .terminal-pattern {
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+      );
   }
 }
