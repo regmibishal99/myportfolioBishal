@@ -67,8 +67,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="section-padding bg-muted/30">
-      <div className="container-custom">
+    <section id="experience" className="section-padding bg-background terminal-pattern relative">
+      <div className="container-custom relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Experience & <span className="gradient-text">Education</span>
@@ -89,7 +89,7 @@ const Experience = () => {
             {education.map((edu, index) => (
               <Card
                 key={index}
-                className="p-6 hover-lift card-shadow hover:card-shadow-lg transition-all duration-300 animate-fade-in"
+                className="p-6 hover-lift card-shadow hover:shadow-glow transition-all duration-300 animate-fade-in bg-card/80 backdrop-blur-sm border-accent/20"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
@@ -168,7 +168,7 @@ const Experience = () => {
             {achievements.map((achievement, index) => (
               <Card
                 key={index}
-                className="p-6 text-center hover-lift card-shadow hover:card-shadow-lg transition-all duration-300 animate-fade-in"
+                className="p-6 text-center hover-lift card-shadow hover:shadow-glow transition-all duration-300 animate-fade-in bg-card/80 backdrop-blur-sm border-accent/20"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <Award className="h-12 w-12 text-accent mx-auto mb-4" />
